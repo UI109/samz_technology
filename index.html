@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personal portfolio to showcase your skills, projects, and experience.">
+    <title>Your Name - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header and Navigation */
+        #navbar {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            font-size: x-large;
+        }
+
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        #navbar ul li {
+            margin-left: 20px;
+            font-size: x-large;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        #navbar ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero span {
+            color: #3498db;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 10px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 60px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Project Cards */
+        .container h2 {
+            font-size: 3.5rem;
+            color: #2980b9;
+        }
+
+        .project-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .project-card {
+            background: black;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card h3 {
+            color: deeppink;
+        }
+
+        .project-card p {
+            color: black;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .skill-item {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .skill-item i {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .skill-item p {
+            font-size: 1.5rem;
+        }
+
+        /* Experience Section */
+        .experience-item h2 {
+            color: aqua;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item p {
+            font-size: 1.5rem;
+            color: yellow;
+        }
+
+        .experience-item h3 {
+            font-size: 1.8rem;
+            color: greenyellow;
+        }
+
+        .experience-item ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 60px 0;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Form */
+        form {
+            display: grid;
+            gap: 15px;
+            color: #fff;
+        }
+
+        .container p {
+            color: whitesmoke;
+            font-size: 1.5rem;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .social-links {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        footer .social-links li {
+            margin: 0 10px;
+        }
+
+        footer .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .header .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header .nav ul li {
+                margin: 10px 0;
+            }
+
+            .project-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body background="jeremy-bishop-G9i_plbfDgk-unsplash.jpg">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <h1 class="logo">Urwah Idrees</h1>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="hero">
+        <div class="container">
+            <h1>Hi, I'm <span>Urwah Idrees. I'm a final year student of Computer Science.</span></h1>
+            <p>I’m a passionate <strong>Web Developer</strong> focused on creating seamless, interactive experiences. Recently, I done my intership as a backend developer. I learned to many things and I am eager to learn more. I also done my intership as a frontend developer. I am eager to learn more things</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <img src="pic.png" alt="Project 1">
+                    <h3>Project WhatsappClone-A real time messaging application</h3>
+                    <p>The WhatsApp Clone is a real-time messaging application designed to replicate the key features of the popular WhatsApp platform. The project aims to provide seamless communication between users through text, multimedia sharing, and live updates. It is built with a focus on performance, scalability, and user-friendly design</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="pic2.png" alt="Project 2">
+                    <h3>Coffee website </h3>
+                    <p>The Coffee website is a beautifully designed platform that showcases the essence of a cozy coffee shop. It provides visitors with an engaging experience, reflecting the warmth and aroma of freshly brewed coffee. The website is tailored for coffee lovers and serves as a digital storefront for the brand, featuring menus, promotions, online ordering.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="pic3.png" alt="Project 3">
+                    <h3>Intership Form </h3>
+                    <p>The backend for the internship application form is a robust system designed to handle applicant data efficiently and securely. It supports the storage, retrieval, and processing of information submitted by applicants while ensuring data validation, error handling, and compliance with privacy standards.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <i class="fa fa-html"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa fa-css"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa fa-react"></i>
+                    <p>React</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa fa-C++"></i>
+                    <p>C++</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa fa-C#"></i>
+                    <p>C#</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa fa-Python"></i>
+                    <p>Python</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Frontend Developer from CognoRise Infotech Company. </h3>
+                <p>December 2024 </p>
+                <ul>
+                    <li>Led the design and implementation of a modern, responsive website.</li>
+                    <li>Collaborated with designers to improve user experience and engagement.</li>
+                    <li>Optimized website performance, improving load time by 40%.</li>
+                    <li>Develop reusable components and templates using HTML, CSS, and JavaScript.</li>
+                    <li>Create mobile-first designs to ensure compatibility across devices and screen sizes.</li>
+                    <li>Collaborate with designers to ensure brand consistency and usability.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Backend Developer from InterCraftSol Pvt.Ltd Company. </h3>
+                <p>January 2024 </p>
+                <ul>
+                    <li>Recently, I done my internship as a backend developer </li>
+                    <li>I make a website of Internee to apply online intership.</li>
+                    <li>Develop, test, and maintain server-side applications and APIs.</li>
+                    <li>Design and optimize relational and non-relational databases (e.g., PostgreSQL, MySQL, MongoDB).</li>
+                    <li>Write efficient queries, stored procedures, and database schema designs.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2>Video</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="istockphoto-1878863310-640_adpp_is.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to work together or just want to say hi, feel free to drop me a message!</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/urwah-idrees-0b5054263/" target="_blank">My Profile</a></p>
+            <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Urwah Idrees | All Rights Reserved</p>
+            <ul class="social-links">
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/yourprofile" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://twitter.com/yourprofile" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
