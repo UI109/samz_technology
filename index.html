@@ -156,27 +156,54 @@
         }
 
         /* Skills Section */
-        .skills-list {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
+        /* Skills Section */
+#skills {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
 
-        .skill-item {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #fff;
-        }
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-        .skill-item i {
-            font-size: 3rem;
-            color: #3498db;
-            margin-bottom: 20px;
-        }
+.skills-table {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 2px solid #3498db;
+}
 
-        .skill-item p {
-            font-size: 1.5rem;
-        }
+.skills-table th, .skills-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #3498db;
+}
+
+.skills-table th {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.skills-table td {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.skills-table tr:nth-child(even) {
+    background-color: #222;
+}
+
+.skills-table tr:hover {
+    background-color: #2980b9;
+    transition: 0.3s ease-in-out;
+}
+
 
         /* Experience Section */
         .experience-item h2 {
@@ -207,7 +234,7 @@
         /* Video Section */
         .video-section {
             padding: 60px 0;
-            background-color: #1a1a1a;
+            background-color: black;
             text-align: center;
         }
 
@@ -316,7 +343,7 @@
         }
     </style>
 </head>
-<body background="jeremy-bishop-G9i_plbfDgk-unsplash.jpg">
+<body background="jeremy-bishop-G9i_plbfDgk-unsplash.jpg"></body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
@@ -369,41 +396,46 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <i class="fa fa-html"></i>
-                    <p>HTML</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-css"></i>
-                    <p>CSS</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-js"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-react"></i>
-                    <p>React</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-C++"></i>
-                    <p>C++</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-C#"></i>
-                    <p>C#</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-Python"></i>
-                    <p>Python</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="skills" class="section">
+    <div class="container">
+        <h2>Skills</h2>
+        <table border="1" cellspacing="0" cellpadding="10" style="width:100%; text-align:center; color:white; border-collapse: collapse;">
+            <tr style="background-color: #3498db; color: white;">
+                <th>Technology</th>
+                <th>Experience</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>3+ years</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>3+ years</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>1.5 years</td>
+            </tr>
+            <tr>
+                <td>React</td>
+                <td>1 years</td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td>4 years</td>
+            </tr>
+            <tr>
+                <td>C#</td>
+                <td>1.5 years</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>1 years</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
 
     <!-- Experience Section -->
     <section id="experience" class="section">
